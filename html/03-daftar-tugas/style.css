@@ -1,0 +1,13 @@
+#daftar-tugas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+#daftar-tugas {
+  max-width: 500px;
+  padding: 0;
+  list-style: none;
+}

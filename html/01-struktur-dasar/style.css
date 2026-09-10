@@ -15,8 +15,6 @@ h1 {
 }
 
 header {
-  background-color: white;
-  padding: 24px;
   margin-bottom: 20px;
   border-radius: 18px;
   display: flex;
@@ -26,10 +24,20 @@ header {
   flex-direction: row;
 }
 
+footer {
+  border-radius: 18px;
+  text-align: center;
+}
+
 main {
+  margin-bottom: 20px;
+}
+
+header,
+main,
+footer {
   background-color: white;
   padding: 24px;
-  margin-bottom: 20px;
 }
 
 img {
@@ -45,15 +53,25 @@ img {
   font-size: 32px;
 }
 
-.link-repo:hover,
-.link-repo:focus-visible {
+.link-repo {
   color: #036801;
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: bold;
 }
 
+.link-repo:hover,
+.link-repo:focus-visible {
+  text-decoration: underline;
+}
+
 @media (max-width: 800px) {
+  body {
+    padding: 12px;
+  }
   header {
     flex-direction: column;
+  }
+  .nama-profile {
+    font-size: 26px;
   }
 }
