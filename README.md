@@ -18,6 +18,11 @@ Repo latihan dasar programming (JavaScript + HTML).
 
 ```bash
 node javascript/01-kondisi/01-target-belajar.js
+node javascript/02-perulangan/01-jadwal-belajar.js
+node javascript/03-fungsi/01-tampilkan-target.js
+node javascript/04-array/01-mengenal-array.js
+node javascript/05-object/01-mengenal-object.js
+node javascript/06-proyek-kasir/01-total-belanja.js
 ```
 
 Untuk HTML, buka di browser:
