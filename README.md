@@ -38,4 +38,7 @@ Untuk HTML, buka di browser:
 - [x] CSS responsif
 - [x] Form + validasi JS
 - [x] Daftar tugas + localStorage
+- [ ] DOM & events lanjutan
+- [ ] fetch API + JSON
+- [ ] Mini project gabungan
 - [ ] Lanjutan lainnya
