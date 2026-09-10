@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 {
+  color: #036801;
+}
+
+header {
+  background-color: white;
+  padding: 24px;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+main {
+  background-color: white;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.foto-profile {
+  border-radius: 16px;
+}
+
+.nama-profile {
+  font-size: 32px;
+}
+
+.link-repo:hover,
+.link-repo:focus-visible {
+  color: #036801;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+  }
+}
