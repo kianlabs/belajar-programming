@@ -2,52 +2,48 @@ const formTugas = document.querySelector('#form-tugas')
 const inputTugas = document.querySelector('#tugas')
 const daftarTugas = document.querySelector('#daftar-tugas')
 
-const tugas = ['Belajar HTML', 'Latihan JavaScript']
 let dataTugas = JSON.parse(localStorage.getItem('daftarTugas')) || []
 
-function tampilkanTugas(teksTugas) {
-  const itemTugas = document.createElement('li')
-  itemTugas.textContent = teksTugas
-
-  const tombolHapus = document.createElement('button')
-  tombolHapus.type = 'button'
-  tombolHapus.textContent = 'Hapus'
-
-  tombolHapus.addEventListener('click', function () {
-    itemTugas.remove()
-  })
-
-  itemTugas.append(tombolHapus)
-  daftarTugas.append(itemTugas)
+function simpanTugas() {
+  localStorage.setItem('daftarTugas', JSON.stringify(dataTugas))
 }
 
-for (const tugas of dataTugas) {
-  tampilkanTugas(tugas)
+function tampilkanSemuaTugas() {
+  daftarTugas.replaceChildren()
+
+  for (let indeks = 0; indeks < dataTugas.length; indeks++) {
+    const itemTugas = document.createElement('li')
+    itemTugas.textContent = dataTugas[indeks]
+
+    const tombolHapus = document.createElement('button')
+    tombolHapus.type = 'button'
+    tombolHapus.textContent = 'Hapus'
+
+    tombolHapus.addEventListener('click', function () {
+      dataTugas.splice(indeks, 1)
+      simpanTugas()
+      tampilkanSemuaTugas()
+    })
+
+    itemTugas.append(tombolHapus)
+    daftarTugas.append(itemTugas)
+  }
 }
+
+tampilkanSemuaTugas()
 
 formTugas.addEventListener('submit', function (event) {
   event.preventDefault()
 
   const teksTugas = inputTugas.value.trim()
+
   if (teksTugas === '') {
     return
   }
 
   dataTugas.push(teksTugas)
-  localStorage.setItem('daftarTugas', JSON.stringify(dataTugas))
-
-  const itemTugas = document.createElement('li')
-  itemTugas.textContent = teksTugas
-
-  const tombolHapus = document.createElement('button')
-  tombolHapus.type = 'button'
-  tombolHapus.textContent = 'hapus'
-
-  tombolHapus.addEventListener('click', function () {
-    itemTugas.remove()
-  })
-
-  tampilkanTugas(teksTugas)
+  simpanTugas()
+  tampilkanSemuaTugas()
 
   formTugas.reset()
   inputTugas.focus()
